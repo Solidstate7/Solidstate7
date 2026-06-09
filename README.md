@@ -20,7 +20,7 @@
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=nestjs,ts,nextjs,react,python,vite&theme=dark" alt="Tech stack: NestJS, TypeScript, Next.js, React, Python, Vite" />
+<img src="https://raw.githubusercontent.com/Solidstate7/Solidstate7/main/bubbles.svg" width="640" alt="Tech stack: NestJS, TypeScript, Next.js, React, Python, Vite" />
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:4A8C8C,100:0D1117&height=100&section=footer" width="100%" alt="" />
 
