@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="124" height="132" viewBox="0 0 124 132" fill="none" role="img" aria-label="Vite">
+  <title>Vite</title>
+  <defs>
+    <radialGradient id="soap" cx="0.36" cy="0.32" r="0.75">
+      <stop offset="0" stop-color="#4A8C8C" stop-opacity="0.04"/>
+      <stop offset="0.55" stop-color="#4A8C8C" stop-opacity="0.13"/>
+      <stop offset="0.88" stop-color="#7FD0D0" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#E6EDF3" stop-opacity="0.12"/>
+    </radialGradient>
+  </defs>
+  <g transform="translate(62,70)">
+    <animateTransform attributeName="transform" type="translate" additive="sum" calcMode="spline" dur="4.8s" begin="-1.7s" repeatCount="indefinite" values="0 0; 1.4 -8; -1 -4; 1.1 -9; 0 0" keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <animate attributeName="opacity" values="0.9;1;0.88;1;0.9" keyTimes="0;0.25;0.5;0.75;1" dur="3.5s" begin="-1.7s" repeatCount="indefinite"/>
+    <circle r="42" fill="url(#soap)" stroke="#7FD0D0" stroke-opacity="0.45" stroke-width="1.2"/>
+    <circle r="42" fill="none" stroke="#4A8C8C" stroke-opacity="0.35" stroke-width="2.4"/>
+    <ellipse cx="-13.4" cy="-16.8" rx="10.9" ry="6.3" fill="#E6EDF3" opacity="0.5" transform="rotate(-28 -13.4 -16.8)"/>
+    <path d="M13.056 23.238a.57.57 0 0 1-1.02-.355v-5.202c0-.63-.512-1.143-1.144-1.143H5.148a.57.57 0 0 1-.464-.903l3.777-5.29c.54-.753 0-1.804-.93-1.804H.57a.574.574 0 0 1-.543-.746.6.6 0 0 1 .08-.157L5.008.78a.57.57 0 0 1 .467-.24h14.589a.57.57 0 0 1 .466.903l-3.778 5.29c-.54.755 0 1.806.93 1.806h5.745c.238 0 .424.138.513.322a.56.56 0 0 1-.063.603z" fill="#E6EDF3" opacity="0.92" transform="scale(1.838) translate(-12,-12)"/>
+  </g>
+</svg>
