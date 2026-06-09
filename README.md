@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,100:4A8C8C&height=190&section=header&text=Solidstate7&fontColor=E6EDF3&fontSize=56&fontAlignY=40&desc=agentic-coding%20power%20user&descSize=18&descAlignY=62&descColor=8B949E" width="100%" alt="Solidstate7" />
+<a href="https://github.com/Solidstate7"><img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,100:4A8C8C&height=190&section=header&text=Solidstate7&fontColor=E6EDF3&fontSize=56&fontAlignY=40&desc=agentic-coding%20power%20user&descSize=18&descAlignY=62&descColor=8B949E" width="100%" alt="Solidstate7" /></a>
 
-<img src="https://readme-typing-svg.demolab.com/?font=IBM+Plex+Mono&size=18&duration=3500&pause=1200&color=4A8C8C&center=true&vCenter=true&width=640&height=40&lines=3.9B+tokens+across+Claude%2C+Codex+%26+Gemini;14+parallel+agents+%C2%B7+night+owl;always+building" alt="tagline" />
+<a href="https://github.com/Solidstate7"><img src="https://readme-typing-svg.demolab.com/?font=IBM+Plex+Mono&size=18&duration=3500&pause=1200&color=4A8C8C&center=true&vCenter=true&width=640&height=40&lines=3.9B+tokens+across+Claude%2C+Codex+%26+Gemini;14+parallel+agents+%C2%B7+night+owl;always+building" alt="tagline" /></a>
 
 </div>
 
@@ -20,8 +20,21 @@
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/Solidstate7/Solidstate7/main/bubbles.svg" width="640" alt="Tech stack: NestJS, TypeScript, Next.js, React, Python, Vite" />
+<a href="https://github.com/Solidstate7"><img src="https://raw.githubusercontent.com/Solidstate7/Solidstate7/main/bubbles.svg" width="640" title="NestJS · TypeScript · Next.js · React · Python · Vite" alt="Tech stack: NestJS, TypeScript, Next.js, React, Python, Vite" /></a>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:4A8C8C,100:0D1117&height=100&section=footer" width="100%" alt="" />
+<details>
+<summary>tech stack · tap for details</summary>
+<br />
+<table>
+<tr><td><b>NestJS</b></td><td>progressive Node.js backend framework</td></tr>
+<tr><td><b>TypeScript</b></td><td>typed JavaScript across the stack</td></tr>
+<tr><td><b>Next.js</b></td><td>React application framework</td></tr>
+<tr><td><b>React</b></td><td>component UI library</td></tr>
+<tr><td><b>Python</b></td><td>scripting · ML · tooling</td></tr>
+<tr><td><b>Vite</b></td><td>fast frontend build tooling</td></tr>
+</table>
+</details>
+
+<a href="https://github.com/Solidstate7"><img src="https://capsule-render.vercel.app/api?type=waving&color=0:4A8C8C,100:0D1117&height=100&section=footer" width="100%" alt="" /></a>
 
 </div>
