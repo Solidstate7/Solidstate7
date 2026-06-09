@@ -20,8 +20,14 @@
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:4A8C8C,100:0D1117&height=100&section=footer" width="100%" alt="" />
+<img src="https://skillicons.dev/icons?i=ts,nextjs,react,nestjs,nodejs,python,vite&theme=dark" alt="Tech stack: TypeScript, Next.js, React, NestJS, Node.js, Python, Vite" />
 
-<a href="https://tokscale.ai/u/Solidstate7"><sub>live usage powered by Tokscale</sub></a>
+</div>
+
+<br />
+
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:4A8C8C,100:0D1117&height=100&section=footer" width="100%" alt="" />
 
 </div>
