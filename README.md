@@ -20,20 +20,12 @@
 
 <div align="center">
 
-<a href="https://github.com/Solidstate7"><img src="https://raw.githubusercontent.com/Solidstate7/Solidstate7/main/bubbles.svg" width="640" title="NestJS · TypeScript · Next.js · React · Python · Vite" alt="Tech stack: NestJS, TypeScript, Next.js, React, Python, Vite" /></a>
-
-<details>
-<summary>tech stack · tap for details</summary>
-<br />
-<table>
-<tr><td><b>NestJS</b></td><td>progressive Node.js backend framework</td></tr>
-<tr><td><b>TypeScript</b></td><td>typed JavaScript across the stack</td></tr>
-<tr><td><b>Next.js</b></td><td>React application framework</td></tr>
-<tr><td><b>React</b></td><td>component UI library</td></tr>
-<tr><td><b>Python</b></td><td>scripting · ML · tooling</td></tr>
-<tr><td><b>Vite</b></td><td>fast frontend build tooling</td></tr>
-</table>
-</details>
+<a href="https://github.com/Solidstate7"><img src="https://raw.githubusercontent.com/Solidstate7/Solidstate7/main/bubble-nestjs.svg" height="106" title="NestJS" alt="NestJS" /></a>
+<a href="https://github.com/Solidstate7"><img src="https://raw.githubusercontent.com/Solidstate7/Solidstate7/main/bubble-typescript.svg" height="106" title="TypeScript" alt="TypeScript" /></a>
+<a href="https://github.com/Solidstate7"><img src="https://raw.githubusercontent.com/Solidstate7/Solidstate7/main/bubble-nextdotjs.svg" height="106" title="Next.js" alt="Next.js" /></a>
+<a href="https://github.com/Solidstate7"><img src="https://raw.githubusercontent.com/Solidstate7/Solidstate7/main/bubble-react.svg" height="106" title="React" alt="React" /></a>
+<a href="https://github.com/Solidstate7"><img src="https://raw.githubusercontent.com/Solidstate7/Solidstate7/main/bubble-python.svg" height="106" title="Python" alt="Python" /></a>
+<a href="https://github.com/Solidstate7"><img src="https://raw.githubusercontent.com/Solidstate7/Solidstate7/main/bubble-vite.svg" height="106" title="Vite" alt="Vite" /></a>
 
 <a href="https://github.com/Solidstate7"><img src="https://capsule-render.vercel.app/api?type=waving&color=0:4A8C8C,100:0D1117&height=100&section=footer" width="100%" alt="" /></a>
 
