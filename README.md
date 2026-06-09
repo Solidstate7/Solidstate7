@@ -73,20 +73,6 @@
 
 <div align="center">
 
-<h3>📊 Activity</h3>
-
-<img src="https://streak-stats.demolab.com/?user=Solidstate7&theme=dark&hide_border=true&background=0D1117&ring=4A8C8C&fire=4A8C8C&currStreakLabel=8B949E&sideLabels=8B949E&dates=586069&currStreakNum=E6EDF3&sideNums=E6EDF3&stroke=21262D" width="480" alt="contribution streak" />
-
-<br /><br />
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=Solidstate7&bg_color=0D1117&color=E6EDF3&line=4A8C8C&point=4A8C8C&area=true&area_color=4A8C8C&hide_border=true&custom_title=Commit%20activity&height=300" width="880" alt="commit activity graph" />
-
-</div>
-
-<br />
-
-<div align="center">
-
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:4A8C8C,100:0D1117&height=100&section=footer" width="100%" alt="" />
 
 <a href="https://tokscale.ai/u/Solidstate7"><sub>live usage powered by Tokscale</sub></a>
