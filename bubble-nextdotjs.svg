@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="124" height="132" viewBox="0 0 124 132" fill="none" role="img" aria-label="Next.js">
+  <title>Next.js</title>
+  <defs>
+    <radialGradient id="soap" cx="0.36" cy="0.32" r="0.75">
+      <stop offset="0" stop-color="#4A8C8C" stop-opacity="0.04"/>
+      <stop offset="0.55" stop-color="#4A8C8C" stop-opacity="0.13"/>
+      <stop offset="0.88" stop-color="#7FD0D0" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#E6EDF3" stop-opacity="0.12"/>
+    </radialGradient>
+  </defs>
+  <g transform="translate(62,70)">
+    <animateTransform attributeName="transform" type="translate" additive="sum" calcMode="spline" dur="3.8s" begin="-0.6s" repeatCount="indefinite" values="0 0; 1.4 -8; -1 -4; 1.1 -9; 0 0" keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+    <animate attributeName="opacity" values="0.9;1;0.88;1;0.9" keyTimes="0;0.25;0.5;0.75;1" dur="2.9s" begin="-0.6s" repeatCount="indefinite"/>
+    <circle r="28" fill="url(#soap)" stroke="#7FD0D0" stroke-opacity="0.45" stroke-width="1.2"/>
+    <circle r="28" fill="none" stroke="#4A8C8C" stroke-opacity="0.35" stroke-width="2.4"/>
+    <ellipse cx="-9.0" cy="-11.2" rx="7.3" ry="4.2" fill="#E6EDF3" opacity="0.5" transform="rotate(-28 -9.0 -11.2)"/>
+    <path d="M18.665 21.978C16.758 23.255 14.465 24 12 24 5.377 24 0 18.623 0 12S5.377 0 12 0s12 5.377 12 12c0 3.583-1.574 6.801-4.067 9.001L9.219 7.2H7.2v9.596h1.615V9.251l9.85 12.727Zm-3.332-8.533 1.6 2.061V7.2h-1.6v6.245Z" fill="#E6EDF3" opacity="0.92" transform="scale(1.225) translate(-12,-12)"/>
+  </g>
+</svg>
