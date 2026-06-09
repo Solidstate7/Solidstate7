@@ -14,59 +14,6 @@
   <img src="https://tokscale.ai/api/embed/Solidstate7/svg?template=blueprint&color=teal&theme=dark&graph=1" width="820" alt="Live AI usage telemetry — Tokscale" />
 </a>
 
-<br /><br />
-
-<a href="https://tokscale.ai/u/Solidstate7"><img src="https://tokscale.ai/api/badge/Solidstate7/svg?metric=tokens&style=flat-square&compact=1&label=tokens&color=4A8C8C" alt="tokens" height="24" /></a>
-&nbsp;
-<a href="https://tokscale.ai/u/Solidstate7"><img src="https://tokscale.ai/api/badge/Solidstate7/svg?metric=cost&style=flat-square&compact=1&label=spend&color=4A8C8C" alt="spend" height="24" /></a>
-&nbsp;
-<a href="https://tokscale.ai/u/Solidstate7"><img src="https://tokscale.ai/api/badge/Solidstate7/svg?metric=rank&style=flat-square&label=rank&color=4A8C8C" alt="rank" height="24" /></a>
-
-</div>
-
-<br />
-
-<div align="center">
-
-<img src="https://img.shields.io/badge/parallel_agents-14-4A8C8C?style=for-the-badge&labelColor=0D1117" alt="14 parallel agents" />
-<img src="https://img.shields.io/badge/longest_session-36h-4A8C8C?style=for-the-badge&labelColor=0D1117" alt="36h longest session" />
-<img src="https://img.shields.io/badge/peak_day-Saturday-2F4F4F?style=for-the-badge&labelColor=0D1117" alt="peak day Saturday" />
-<img src="https://img.shields.io/badge/mode-night_owl-2F4F4F?style=for-the-badge&labelColor=0D1117" alt="night owl" />
-
-</div>
-
-<br />
-
-<div align="center">
-
-<h3>🧰 Toolkit</h3>
-
-<img src="https://img.shields.io/badge/TypeScript-4A8C8C?style=for-the-badge&logo=typescript&logoColor=E6EDF3&labelColor=0D1117" alt="TypeScript" />
-<img src="https://img.shields.io/badge/Next.js-2F4F4F?style=for-the-badge&logo=nextdotjs&logoColor=E6EDF3&labelColor=0D1117" alt="Next.js" />
-<img src="https://img.shields.io/badge/React-2F4F4F?style=for-the-badge&logo=react&logoColor=E6EDF3&labelColor=0D1117" alt="React" />
-<img src="https://img.shields.io/badge/Vite-2F4F4F?style=for-the-badge&logo=vite&logoColor=E6EDF3&labelColor=0D1117" alt="Vite" />
-<img src="https://img.shields.io/badge/Python-2F4F4F?style=for-the-badge&logo=python&logoColor=E6EDF3&labelColor=0D1117" alt="Python" />
-
-</div>
-
-<br />
-
-<div align="center">
-
-<h3>🤖 AI Stack</h3>
-
-<img src="https://img.shields.io/badge/Claude_Code-primary-4A8C8C?style=for-the-badge&logo=anthropic&logoColor=E6EDF3&labelColor=0D1117" alt="Claude Code — primary driver" />
-<img src="https://img.shields.io/badge/OpenAI_Codex-gpt--5.5-2F4F4F?style=for-the-badge&logo=openai&logoColor=E6EDF3&labelColor=0D1117" alt="OpenAI Codex" />
-<img src="https://img.shields.io/badge/Gemini-secondary-2F4F4F?style=for-the-badge&logo=googlegemini&logoColor=E6EDF3&labelColor=0D1117" alt="Gemini" />
-
-<br />
-
-<img src="https://img.shields.io/badge/Opus-4.8_·_4.7-8B949E?style=flat-square&labelColor=0D1117" alt="Opus 4.8 and 4.7" />
-&nbsp;
-<img src="https://img.shields.io/badge/Sonnet-4.6-8B949E?style=flat-square&labelColor=0D1117" alt="Sonnet 4.6" />
-&nbsp;
-<img src="https://img.shields.io/badge/Haiku-4.5-8B949E?style=flat-square&labelColor=0D1117" alt="Haiku 4.5" />
-
 </div>
 
 <br />
