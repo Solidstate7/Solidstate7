@@ -20,12 +20,12 @@
 
 <div align="center">
 
-<a href=""><img src="https://raw.githubusercontent.com/Solidstate7/Solidstate7/main/bubble-nestjs.svg" height="106" title="NestJS" alt="NestJS" /></a>
-<a href=""><img src="https://raw.githubusercontent.com/Solidstate7/Solidstate7/main/bubble-typescript.svg" height="106" title="TypeScript" alt="TypeScript" /></a>
-<a href=""><img src="https://raw.githubusercontent.com/Solidstate7/Solidstate7/main/bubble-nextdotjs.svg" height="106" title="Next.js" alt="Next.js" /></a>
-<a href=""><img src="https://raw.githubusercontent.com/Solidstate7/Solidstate7/main/bubble-react.svg" height="106" title="React" alt="React" /></a>
-<a href=""><img src="https://raw.githubusercontent.com/Solidstate7/Solidstate7/main/bubble-python.svg" height="106" title="Python" alt="Python" /></a>
-<a href=""><img src="https://raw.githubusercontent.com/Solidstate7/Solidstate7/main/bubble-vite.svg" height="106" title="Vite" alt="Vite" /></a>
+<a href=""><img src="https://raw.githubusercontent.com/Solidstate7/Solidstate7/main/bubble-nestjs.svg?v=2" height="106" title="NestJS" alt="NestJS" /></a>
+<a href=""><img src="https://raw.githubusercontent.com/Solidstate7/Solidstate7/main/bubble-nextdotjs.svg?v=2" height="106" title="Next.js" alt="Next.js" /></a>
+<a href=""><img src="https://raw.githubusercontent.com/Solidstate7/Solidstate7/main/bubble-react.svg?v=2" height="106" title="React" alt="React" /></a>
+<a href=""><img src="https://raw.githubusercontent.com/Solidstate7/Solidstate7/main/bubble-typescript.svg?v=2" height="106" title="TypeScript" alt="TypeScript" /></a>
+<a href=""><img src="https://raw.githubusercontent.com/Solidstate7/Solidstate7/main/bubble-python.svg?v=2" height="106" title="Python" alt="Python" /></a>
+<a href=""><img src="https://raw.githubusercontent.com/Solidstate7/Solidstate7/main/bubble-vite.svg?v=2" height="106" title="Vite" alt="Vite" /></a>
 
 <a href=""><img src="https://capsule-render.vercel.app/api?type=waving&color=0:4A8C8C,100:0D1117&height=100&section=footer" width="100%" alt="" /></a>
 
