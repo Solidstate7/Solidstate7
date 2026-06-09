@@ -1,50 +1,26 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com/?font=IBM+Plex+Mono&size=30&duration=4000&pause=1500&color=E6EDF3&center=true&vCenter=true&width=620&height=70&lines=Solidstate7" alt="Solidstate7" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,100:4A8C8C&height=190&section=header&text=Solidstate7&fontColor=E6EDF3&fontSize=56&fontAlignY=40&desc=agentic-coding%20power%20user&descSize=18&descAlignY=62&descColor=8B949E" width="100%" alt="Solidstate7" />
 
-<img src="https://readme-typing-svg.demolab.com/?font=IBM+Plex+Mono&size=17&duration=3500&pause=1200&color=4A8C8C&center=true&vCenter=true&width=640&height=40&lines=agentic-coding+power+user;3.9B+tokens+%C2%B7+14+parallel+agents+%C2%B7+night+owl;always+building" alt="agentic-coding power user — 3.9B tokens, 14 parallel agents, night owl, always building" />
-
-<br />
-
-<img src="https://img.shields.io/badge/REV-4.8-E6EDF3?style=flat-square&labelColor=0D1117&color=4A8C8C" alt="Revision 4.8" />
-&nbsp;
-<img src="https://img.shields.io/badge/SHEET-1_of_1-8B949E?style=flat-square&labelColor=0D1117" alt="Sheet 1 of 1" />
-&nbsp;
-<img src="https://img.shields.io/badge/UNIT-Solidstate7-8B949E?style=flat-square&labelColor=0D1117" alt="Unit Solidstate7" />
-&nbsp;
-<img src="https://img.shields.io/badge/STATUS-agents_live-E6EDF3?style=flat-square&labelColor=0D1117&color=4A8C8C" alt="Status agents live" />
-
-<br />
-
-&nbsp;&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;&nbsp;·
+<img src="https://readme-typing-svg.demolab.com/?font=IBM+Plex+Mono&size=18&duration=3500&pause=1200&color=4A8C8C&center=true&vCenter=true&width=640&height=40&lines=3.9B+tokens+across+Claude%2C+Codex+%26+Gemini;14+parallel+agents+%C2%B7+night+owl;always+building" alt="tagline" />
 
 </div>
 
-<!-- ── CENTERPIECE · A · Usage telemetry ─────────────────────────────── -->
+<br />
 
 <div align="center">
 
-<pre>┌─ A · USAGE TELEMETRY ──────────────────────────────────────────┐</pre>
-
 <a href="https://tokscale.ai/u/Solidstate7">
-  <img src="https://tokscale.ai/api/embed/Solidstate7/svg?template=blueprint&color=teal&theme=dark&graph=1" alt="Solidstate7 — live AI usage telemetry on Tokscale (blueprint)" width="760" />
+  <img src="https://tokscale.ai/api/embed/Solidstate7/svg?template=blueprint&color=teal&theme=dark&graph=1" width="820" alt="Live AI usage telemetry — Tokscale" />
 </a>
 
 <br /><br />
 
-<a href="https://tokscale.ai/u/Solidstate7">
-  <img src="https://tokscale.ai/api/badge/Solidstate7/svg?metric=tokens&style=flat-square&compact=1&label=tokens&color=4A8C8C" alt="Total tokens" height="22" />
-</a>
+<a href="https://tokscale.ai/u/Solidstate7"><img src="https://tokscale.ai/api/badge/Solidstate7/svg?metric=tokens&style=flat-square&compact=1&label=tokens&color=4A8C8C" alt="tokens" height="24" /></a>
 &nbsp;
-<a href="https://tokscale.ai/u/Solidstate7">
-  <img src="https://tokscale.ai/api/badge/Solidstate7/svg?metric=cost&style=flat-square&compact=1&label=spend&color=4A8C8C" alt="Total spend" height="22" />
-</a>
+<a href="https://tokscale.ai/u/Solidstate7"><img src="https://tokscale.ai/api/badge/Solidstate7/svg?metric=cost&style=flat-square&compact=1&label=spend&color=4A8C8C" alt="spend" height="24" /></a>
 &nbsp;
-<a href="https://tokscale.ai/u/Solidstate7">
-  <img src="https://tokscale.ai/api/badge/Solidstate7/svg?metric=rank&style=flat-square&label=rank&color=4A8C8C" alt="Tokscale rank" height="22" />
-</a>
-
-<pre>└────────────────────────────────────────────────────────────────┘</pre>
+<a href="https://tokscale.ai/u/Solidstate7"><img src="https://tokscale.ai/api/badge/Solidstate7/svg?metric=rank&style=flat-square&label=rank&color=4A8C8C" alt="rank" height="24" /></a>
 
 </div>
 
@@ -52,27 +28,36 @@
 
 <div align="center">
 
-&nbsp;&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;&nbsp;·
+<img src="https://img.shields.io/badge/parallel_agents-14-4A8C8C?style=for-the-badge&labelColor=0D1117" alt="14 parallel agents" />
+<img src="https://img.shields.io/badge/longest_session-36h-4A8C8C?style=for-the-badge&labelColor=0D1117" alt="36h longest session" />
+<img src="https://img.shields.io/badge/peak_day-Saturday-2F4F4F?style=for-the-badge&labelColor=0D1117" alt="peak day Saturday" />
+<img src="https://img.shields.io/badge/mode-night_owl-2F4F4F?style=for-the-badge&labelColor=0D1117" alt="night owl" />
 
 </div>
 
 <br />
 
-<!-- ── B · Practice ──────────────────────────────────────────────────── -->
+<div align="center">
+
+<h3>🧰 Toolkit</h3>
+
+<img src="https://img.shields.io/badge/TypeScript-4A8C8C?style=for-the-badge&logo=typescript&logoColor=E6EDF3&labelColor=0D1117" alt="TypeScript" />
+<img src="https://img.shields.io/badge/Next.js-2F4F4F?style=for-the-badge&logo=nextdotjs&logoColor=E6EDF3&labelColor=0D1117" alt="Next.js" />
+<img src="https://img.shields.io/badge/React-2F4F4F?style=for-the-badge&logo=react&logoColor=E6EDF3&labelColor=0D1117" alt="React" />
+<img src="https://img.shields.io/badge/Vite-2F4F4F?style=for-the-badge&logo=vite&logoColor=E6EDF3&labelColor=0D1117" alt="Vite" />
+<img src="https://img.shields.io/badge/Python-2F4F4F?style=for-the-badge&logo=python&logoColor=E6EDF3&labelColor=0D1117" alt="Python" />
+
+</div>
+
+<br />
 
 <div align="center">
 
-<h3>B · Practice</h3>
+<h3>🤖 AI Stack</h3>
 
-<sub>Claude Code drives. Codex and Gemini ride shotgun.</sub>
-
-<br /><br />
-
-<img src="https://img.shields.io/badge/Claude_Code-primary_driver-E6EDF3?style=flat-square&labelColor=0D1117&color=4A8C8C" alt="Claude Code — primary driver" />
-&nbsp;
-<img src="https://img.shields.io/badge/OpenAI_Codex-gpt--5.5-E6EDF3?style=flat-square&labelColor=0D1117&color=2F4F4F" alt="OpenAI Codex — gpt-5.5" />
-&nbsp;
-<img src="https://img.shields.io/badge/Gemini-secondary-E6EDF3?style=flat-square&labelColor=0D1117&color=2F4F4F" alt="Gemini — secondary" />
+<img src="https://img.shields.io/badge/Claude_Code-primary-4A8C8C?style=for-the-badge&logo=anthropic&logoColor=E6EDF3&labelColor=0D1117" alt="Claude Code — primary driver" />
+<img src="https://img.shields.io/badge/OpenAI_Codex-gpt--5.5-2F4F4F?style=for-the-badge&logo=openai&logoColor=E6EDF3&labelColor=0D1117" alt="OpenAI Codex" />
+<img src="https://img.shields.io/badge/Gemini-secondary-2F4F4F?style=for-the-badge&logo=googlegemini&logoColor=E6EDF3&labelColor=0D1117" alt="Gemini" />
 
 <br />
 
@@ -86,90 +71,15 @@
 
 <br />
 
-```ini
-[runtime]
-schedule      = night-owl
-longest_block = 36h continuous
-peak_day      = Saturday
-
-[duty_cycle]
-agents_max    = 14 parallel
-tokens_total  = 3.9B
-spend_total   = ~$3.2K
-window        = ~2.5 months
-```
-
 <div align="center">
 
-&nbsp;&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;&nbsp;·
+<h3>📊 Activity</h3>
 
-</div>
-
-<br />
-
-<!-- ── C · Build ─────────────────────────────────────────────────────── -->
-
-<div align="center">
-
-<h3>C · Build</h3>
-
-</div>
-
-```text
-            ┌────────────────────────────────────┐
-            │   ████████   ·   in development     │
-            │   ████████   ·   announcements soon │
-            └────────────────────────────────────┘
-```
-
-<div align="center">
-
-<sub>Projects under wraps for now — public when they ship.</sub>
-
-</div>
-
-<br />
-
-```bash
-# bill of materials · stack
-TypeScript    core language
-Next.js       app framework
-React         UI runtime
-Vite          build tooling
-Python        services + agentic glue
-```
-
-<div align="center">
-
-<img src="https://img.shields.io/badge/TypeScript-E6EDF3?style=flat-square&labelColor=0D1117&color=4A8C8C" alt="TypeScript" />
-&nbsp;
-<img src="https://img.shields.io/badge/Next.js-8B949E?style=flat-square&labelColor=0D1117" alt="Next.js" />
-&nbsp;
-<img src="https://img.shields.io/badge/React-8B949E?style=flat-square&labelColor=0D1117" alt="React" />
-&nbsp;
-<img src="https://img.shields.io/badge/Vite-8B949E?style=flat-square&labelColor=0D1117" alt="Vite" />
-&nbsp;
-<img src="https://img.shields.io/badge/Python-8B949E?style=flat-square&labelColor=0D1117" alt="Python" />
+<img src="https://streak-stats.demolab.com/?user=Solidstate7&theme=dark&hide_border=true&background=0D1117&ring=4A8C8C&fire=4A8C8C&currStreakLabel=8B949E&sideLabels=8B949E&dates=586069&currStreakNum=E6EDF3&sideNums=E6EDF3&stroke=21262D" width="480" alt="contribution streak" />
 
 <br /><br />
 
-&nbsp;&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;&nbsp;·
-
-</div>
-
-<br />
-
-<!-- ── D · Cadence ───────────────────────────────────────────────────── -->
-
-<div align="center">
-
-<h3>D · Cadence</h3>
-
-<img src="https://streak-stats.demolab.com/?user=Solidstate7&theme=dark&hide_border=true&background=0D1117&ring=4A8C8C&fire=4A8C8C&currStreakLabel=8B949E&sideLabels=8B949E&dates=586069&currStreakNum=E6EDF3&sideNums=E6EDF3&stroke=21262D" alt="Solidstate7 contribution streak" width="460" />
-
-<br /><br />
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=Solidstate7&bg_color=0D1117&color=E6EDF3&line=4A8C8C&point=4A8C8C&area=true&area_color=4A8C8C&hide_border=true&custom_title=Commit%20activity&height=300" alt="Solidstate7 commit activity graph" width="900" />
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=Solidstate7&bg_color=0D1117&color=E6EDF3&line=4A8C8C&point=4A8C8C&area=true&area_color=4A8C8C&hide_border=true&custom_title=Commit%20activity&height=300" width="880" alt="commit activity graph" />
 
 </div>
 
@@ -177,18 +87,8 @@ Python        services + agentic glue
 
 <div align="center">
 
-&nbsp;&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;&nbsp;·
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:4A8C8C,100:0D1117&height=100&section=footer" width="100%" alt="" />
 
-<br /><br />
-
-<a href="https://tokscale.ai/u/Solidstate7"><img src="https://img.shields.io/badge/live_stats-tokscale.ai%2Fu%2FSolidstate7-E6EDF3?style=flat-square&labelColor=0D1117&color=4A8C8C" alt="Tokscale profile" /></a>
-
-<!-- TODO: your website / portfolio link -->
-<!-- TODO: your X / Twitter handle -->
-<!-- TODO: your LinkedIn or other socials -->
-
-<br /><br />
-
-<sub>Live usage statement powered by <a href="https://tokscale.ai/u/Solidstate7">Tokscale</a>.</sub>
+<a href="https://tokscale.ai/u/Solidstate7"><sub>live usage powered by Tokscale</sub></a>
 
 </div>
