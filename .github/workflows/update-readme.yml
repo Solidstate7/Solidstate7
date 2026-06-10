@@ -1,0 +1,65 @@
+name: Update README Stats
+
+on:
+  # Manual trigger from GitHub UI — pass the new token count
+  workflow_dispatch:
+    inputs:
+      tokens:
+        description: 'Token count to display (e.g. 4.1B)'
+        required: true
+
+  # Programmatic trigger from local submit-and-push.sh
+  repository_dispatch:
+    types: [tokscale-updated]
+
+  # Daily cron fallback — reads .tokscale-cache.json committed by local script
+  schedule:
+    - cron: '30 3 * * *'   # 03:30 UTC daily (after local 3am submit)
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Resolve token count
+        id: resolve
+        run: |
+          # Priority: workflow_dispatch input > repository_dispatch payload > cache file
+          TOKENS="${{ github.event.inputs.tokens || github.event.client_payload.tokens }}"
+
+          if [ -z "$TOKENS" ] && [ -f .tokscale-cache.json ]; then
+            TOKENS=$(python3 -c "import json; print(json.load(open('.tokscale-cache.json'))['tokens'])" 2>/dev/null || echo "")
+          fi
+
+          if [ -z "$TOKENS" ]; then
+            echo "No token count available — skipping update."
+            exit 0
+          fi
+
+          echo "tokens=$TOKENS" >> "$GITHUB_OUTPUT"
+          echo "Resolved token count: $TOKENS"
+
+      - name: Update README typing-svg line
+        if: steps.resolve.outputs.tokens != ''
+        run: |
+          TOKENS="${{ steps.resolve.outputs.tokens }}"
+          ESCAPED="${TOKENS//./\\.}"
+          sed -i "s|[0-9][0-9.]*[BMK]*+tokens|${ESCAPED}+tokens|g" README.md
+          echo "README updated with: $TOKENS"
+
+      - name: Commit if changed
+        if: steps.resolve.outputs.tokens != ''
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet README.md; then
+            echo "README already up to date."
+          else
+            git add README.md
+            git commit -m "chore: update token stats → ${{ steps.resolve.outputs.tokens }}"
+            git push
+          fi
