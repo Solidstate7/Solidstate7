@@ -5,10 +5,14 @@ REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 LOG_PREFIX="[tokscale]"
 
 echo "$LOG_PREFIX Submitting usage data..."
-npx --yes tokscale@latest submit --no-spinner
+# Non-fatal: a tokscale platform/network/flag hiccup must never freeze the README.
+# The displayed count below is computed from the local --json read, which does not
+# depend on submit succeeding.
+npx --yes tokscale@latest submit \
+  || echo "$LOG_PREFIX WARN: submit failed; continuing with local data."
 
 echo "$LOG_PREFIX Computing token total..."
-TOTAL=$(npx tokscale@latest --json --no-spinner | python3 -c "
+TOTAL=$(npx tokscale@latest --json | python3 -c "
 import json, sys
 data = json.load(sys.stdin)
 total = sum(
@@ -47,6 +51,7 @@ fi
 
 git add README.md .tokscale-cache.json
 git commit -m "chore: update token stats → $TOTAL [skip ci]"
-git push
+# Explicit remote/ref so it works even if 'main' has no upstream configured.
+git push origin HEAD
 
 echo "$LOG_PREFIX Done. README updated to $TOTAL."
