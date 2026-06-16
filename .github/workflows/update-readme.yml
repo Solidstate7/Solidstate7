@@ -1,20 +1,23 @@
 name: Update README Stats
 
 on:
-  # Manual trigger from GitHub UI — pass the new token count
+  # Manual trigger from GitHub UI — values blank ⇒ read from .tokscale-cache.json
   workflow_dispatch:
     inputs:
       tokens:
-        description: 'Token count to display (e.g. 4.1B)'
-        required: true
+        description: 'Token count to display (e.g. 4.1B). Blank = read cache.'
+        required: false
+      agents:
+        description: 'Peak parallel agents (e.g. 14). Blank = read cache.'
+        required: false
 
   # Programmatic trigger from local submit-and-push.sh
   repository_dispatch:
     types: [tokscale-updated]
 
-  # Daily cron fallback — reads .tokscale-cache.json committed by local script
+  # Daily cron fallback — reads .tokscale-cache.json committed by the local script
   schedule:
-    - cron: '30 3 * * *'   # 03:30 UTC daily (after local 3am submit)
+    - cron: '30 3 * * *'   # 03:30 UTC daily (after the local 03:00 submit)
 
 jobs:
   update:
@@ -25,34 +28,41 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Resolve token count
+      - name: Resolve stats
         id: resolve
         run: |
-          # Priority: workflow_dispatch input > repository_dispatch payload > cache file
+          # Priority per field: dispatch input > repository_dispatch payload > cache file.
           TOKENS="${{ github.event.inputs.tokens || github.event.client_payload.tokens }}"
+          AGENTS="${{ github.event.inputs.agents || github.event.client_payload.agents }}"
 
-          if [ -z "$TOKENS" ] && [ -f .tokscale-cache.json ]; then
-            TOKENS=$(python3 -c "import json; print(json.load(open('.tokscale-cache.json'))['tokens'])" 2>/dev/null || echo "")
+          if [ -f .tokscale-cache.json ]; then
+            [ -z "$TOKENS" ] && TOKENS=$(python3 -c "import json;print(json.load(open('.tokscale-cache.json')).get('tokens',''))" 2>/dev/null || echo "")
+            [ -z "$AGENTS" ] && AGENTS=$(python3 -c "import json;print(json.load(open('.tokscale-cache.json')).get('max_concurrent_sessions',''))" 2>/dev/null || echo "")
           fi
 
-          if [ -z "$TOKENS" ]; then
-            echo "No token count available — skipping update."
+          if [ -z "$TOKENS" ] && [ -z "$AGENTS" ]; then
+            echo "No stats available — skipping update."
             exit 0
           fi
 
           echo "tokens=$TOKENS" >> "$GITHUB_OUTPUT"
-          echo "Resolved token count: $TOKENS"
+          echo "agents=$AGENTS" >> "$GITHUB_OUTPUT"
+          echo "Resolved: tokens=$TOKENS  agents=$AGENTS"
 
       - name: Update README typing-svg line
-        if: steps.resolve.outputs.tokens != ''
         run: |
           TOKENS="${{ steps.resolve.outputs.tokens }}"
-          ESCAPED="${TOKENS//./\\.}"
-          sed -i "s|[0-9][0-9.]*[BMK]*+tokens|${ESCAPED}+tokens|g" README.md
-          echo "README updated with: $TOKENS"
+          AGENTS="${{ steps.resolve.outputs.agents }}"
+          if [ -n "$TOKENS" ]; then
+            ESCAPED="${TOKENS//./\\.}"
+            sed -i "s|[0-9][0-9.]*[BMK]*+tokens|${ESCAPED}+tokens|g" README.md
+          fi
+          if [ -n "$AGENTS" ]; then
+            sed -i "s|[0-9][0-9]*+parallel+agents|${AGENTS}+parallel+agents|g" README.md
+          fi
+          echo "README updated (tokens=$TOKENS agents=$AGENTS)"
 
       - name: Commit if changed
-        if: steps.resolve.outputs.tokens != ''
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -60,6 +70,6 @@ jobs:
             echo "README already up to date."
           else
             git add README.md
-            git commit -m "chore: update token stats → ${{ steps.resolve.outputs.tokens }}"
+            git commit -m "chore: update profile stats → ${{ steps.resolve.outputs.tokens }} tokens · ${{ steps.resolve.outputs.agents }} agents"
             git push
           fi
