@@ -1,11 +1,11 @@
 name: Update README Stats
 
 on:
-  # Manual trigger from GitHub UI — values blank ⇒ read from .tokscale-cache.json
+  # Manual trigger — values blank ⇒ resolve from platform API / cache.
   workflow_dispatch:
     inputs:
       tokens:
-        description: 'Token count to display (e.g. 4.1B). Blank = read cache.'
+        description: 'Token count to display (e.g. 4.7B). Blank = resolve automatically.'
         required: false
       agents:
         description: 'Peak parallel agents (e.g. 14). Blank = read cache.'
@@ -15,9 +15,12 @@ on:
   repository_dispatch:
     types: [tokscale-updated]
 
-  # Daily cron fallback — reads .tokscale-cache.json committed by the local script
+  # Daily cron fallback (independent of the local 03:00 job).
   schedule:
-    - cron: '30 3 * * *'   # 03:30 UTC daily (after the local 03:00 submit)
+    - cron: '30 3 * * *'   # 03:30 UTC daily
+
+env:
+  TS_USER: Solidstate7
 
 jobs:
   update:
@@ -31,9 +34,21 @@ jobs:
       - name: Resolve stats
         id: resolve
         run: |
-          # Priority per field: dispatch input > repository_dispatch payload > cache file.
+          # tokens: dispatch input > repository_dispatch payload > PLATFORM API > cache
+          # agents: dispatch input > repository_dispatch payload > cache
+          # (max-concurrent is not exposed by the platform, so it relies on the cache
+          #  the local job commits — that's the one field the cloud can't self-source.)
           TOKENS="${{ github.event.inputs.tokens || github.event.client_payload.tokens }}"
           AGENTS="${{ github.event.inputs.agents || github.event.client_payload.agents }}"
+
+          if [ -z "$TOKENS" ]; then
+            RAW=$(curl -s --fail --max-time 30 "https://tokscale.ai/api/users/${TS_USER}" \
+                  | python3 -c "import json,sys; print(json.load(sys.stdin).get('stats',{}).get('totalTokens',''))" 2>/dev/null || echo "")
+            if [ -n "$RAW" ]; then
+              # Floor to 1 decimal — must match scripts/submit-and-push.sh.
+              TOKENS=$(python3 -c "import math; b=$RAW/1e9; print(f'{math.floor(b)}B' if b>=10 else (f'{math.floor(b*10)/10:.1f}B' if b>=1 else f'{math.floor($RAW/1e6)}M'))")
+            fi
+          fi
 
           if [ -f .tokscale-cache.json ]; then
             [ -z "$TOKENS" ] && TOKENS=$(python3 -c "import json;print(json.load(open('.tokscale-cache.json')).get('tokens',''))" 2>/dev/null || echo "")
@@ -44,7 +59,6 @@ jobs:
             echo "No stats available — skipping update."
             exit 0
           fi
-
           echo "tokens=$TOKENS" >> "$GITHUB_OUTPUT"
           echo "agents=$AGENTS" >> "$GITHUB_OUTPUT"
           echo "Resolved: tokens=$TOKENS  agents=$AGENTS"
@@ -57,7 +71,7 @@ jobs:
             ESCAPED="${TOKENS//./\\.}"
             sed -i "s|[0-9][0-9.]*[BMK]*+tokens|${ESCAPED}+tokens|g" README.md
           fi
-          if [ -n "$AGENTS" ]; then
+          if [ -n "$AGENTS" ] && [ "$AGENTS" != "0" ]; then
             sed -i "s|[0-9][0-9]*+parallel+agents|${AGENTS}+parallel+agents|g" README.md
           fi
           echo "README updated (tokens=$TOKENS agents=$AGENTS)"
