@@ -44,8 +44,10 @@ sed -i '' \
 
 cd "$REPO_DIR"
 
-if git diff --quiet README.md .tokscale-cache.json 2>/dev/null; then
-  echo "$LOG_PREFIX No changes — README already current."
+# Gate on README only — the cache file's timestamp changes every run, so
+# including it here would produce a junk commit daily even when the count is flat.
+if git diff --quiet README.md 2>/dev/null; then
+  echo "$LOG_PREFIX No change in displayed token count — nothing to commit."
   exit 0
 fi
 
