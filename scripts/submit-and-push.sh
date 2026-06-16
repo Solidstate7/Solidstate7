@@ -8,33 +8,33 @@ PLAT_URL="https://tokscale.ai/api/users/${TS_USER}"
 
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
+WARN=""                                     # accumulates non-fatal degradations → recorded in the cache
 
-# 1) Push local usage to the Tokscale platform (also refreshes the live embed and
-#    the platform total we read back below). Non-fatal — a hiccup here must never
-#    freeze the README.
+# 1) Push local usage to the Tokscale platform (also refreshes the live embed and the
+#    platform total we read back below). Non-fatal.
 echo "$LOG_PREFIX Submitting usage data..."
 npx --yes tokscale@latest submit \
-  || echo "$LOG_PREFIX WARN: submit failed; continuing."
+  || { echo "$LOG_PREFIX WARN: submit failed; continuing."; WARN="${WARN}submit failed; "; }
 
 # 2) Harvest authoritative stats.
-#    - Token total + sessions + active time come from the PLATFORM API — the SAME
-#      source as the README's live embed, so the two can never disagree. (The local
-#      CLI scan only sees session files for the local retention window, so it
-#      UNDERCOUNTS lifetime tokens — that mismatch is what showed 4.0B vs the real 4.7B.)
-#    - Peak concurrency + longest streak are NOT on the platform, so they come from
-#      the local `time-metrics` report.
+#    - Token total + sessions + active time come from the PLATFORM API — the SAME source
+#      as the README's live embed, so the two can never disagree. (The local CLI scan only
+#      sees the local session-file retention window, so it UNDERCOUNTS lifetime tokens —
+#      that mismatch is what showed 4.0B vs the real 4.7B.)
+#    - Peak concurrency + longest streak are NOT on the platform → local `time-metrics`.
 echo "$LOG_PREFIX Fetching platform totals + local time-metrics..."
 curl -s --fail --max-time 30 "$PLAT_URL" -o "$TMP/plat.json" \
-  || { echo "$LOG_PREFIX WARN: platform fetch failed; keeping last known token total."; echo '{}' > "$TMP/plat.json"; }
+  || { echo "$LOG_PREFIX WARN: platform fetch failed; keeping last known token total."; \
+       WARN="${WARN}platform fetch failed (token total may be stale); "; echo '{}' > "$TMP/plat.json"; }
 [ -s "$TMP/plat.json" ] || echo '{}' > "$TMP/plat.json"
 
 npx tokscale@latest time-metrics --json 2>/dev/null > "$TMP/metrics.json" \
-  || echo '{}' > "$TMP/metrics.json"
+  || { echo '{}' > "$TMP/metrics.json"; WARN="${WARN}time-metrics failed; "; }
 [ -s "$TMP/metrics.json" ] || echo '{}' > "$TMP/metrics.json"
 
-# Single source of truth: derive every display value, write the full cache
-# (consumed by the GH Actions fallback), and emit shell assignments to source.
-python3 - "$TMP/plat.json" "$TMP/metrics.json" "$REPO_DIR/.tokscale-cache.json" \
+# Single source of truth: derive every display value, write the full cache (consumed by
+# the GH Actions fallback + local monitoring), and emit shell assignments.
+python3 - "$TMP/plat.json" "$TMP/metrics.json" "$REPO_DIR/.tokscale-cache.json" "$WARN" \
   > "$TMP/vars.sh" <<'PY'
 import json, sys, math, datetime
 
@@ -46,11 +46,12 @@ def load(p):
     except Exception:
         return {}
 
-plat    = load(sys.argv[1])
-stats   = plat.get("stats", {}) or {}
-rank    = (plat.get("user", {}) or {}).get("rank")
-metrics = (load(sys.argv[2]) or {}).get("metrics", {}) or {}
-prev    = load(sys.argv[3])                      # existing cache → fallback values
+plat     = load(sys.argv[1])
+stats    = plat.get("stats", {}) or {}
+rank     = (plat.get("user", {}) or {}).get("rank")
+metrics  = (load(sys.argv[2]) or {}).get("metrics", {}) or {}
+prev     = load(sys.argv[3])                     # existing cache → fallback values
+warnings = (sys.argv[4] or "").strip()
 
 def fmt_tokens(total):
     # Floor to 1 decimal (matches how tokscale.ai/the embed displays it):
@@ -69,6 +70,7 @@ strk_h = int(metrics.get("longest_continuous_ms", 0) // 3_600_000) or int(prev.g
 sess   = int(stats.get("sessionCount", 0) or prev.get("session_count", 0) or 0)
 act_h  = int(int(stats.get("totalActiveTimeMs", 0)) // 3_600_000) or int(prev.get("active_hours", 0) or 0)
 adays  = int(stats.get("activeDays", 0) or prev.get("active_days", 0) or 0)
+rank   = rank if rank is not None else prev.get("rank")
 
 cache = {
     "tokens": tokens,
@@ -78,7 +80,8 @@ cache = {
     "active_days": adays,
     "active_hours": act_h,
     "longest_streak_hours": strk_h,
-    "rank": rank if rank is not None else prev.get("rank"),
+    "rank": rank,
+    "warnings": warnings,                        # "" on a clean run; non-empty = degraded
     "source": "platform API (tokens/sessions/activeDays/activeTime) + local time-metrics (peak concurrent/longest streak)",
     "updated": now_utc,
 }
@@ -88,18 +91,15 @@ with open(sys.argv[3], "w") as f:
 
 print(f"TOKENS='{tokens}'")
 print(f"MAXC='{maxc}'")
-print(f"SESS='{sess}'")
-print(f"ACTH='{act_h}'")
-print(f"STREAKH='{strk_h}'")
 PY
 # shellcheck disable=SC1090
 source "$TMP/vars.sh"
 
-echo "$LOG_PREFIX Tokens=$TOKENS  PeakAgents=$MAXC  Sessions=$SESS  Active=${ACTH}h  Streak=${STREAKH}h"
+echo "$LOG_PREFIX Tokens=$TOKENS  PeakAgents=$MAXC${WARN:+  WARN: $WARN}"
 
 # 3) Update the README typing-svg tagline (URL-encoded: + is space). Each pattern is
-#    anchored by its trailing label, so substitutions can't collide. Guarded so a
-#    missing value never blanks out the README.
+#    anchored by its trailing label, so substitutions can't collide. Guarded so a missing
+#    value never blanks out the README.
 if [ -n "$TOKENS" ]; then
   TOKENS_ESC="${TOKENS//./\\.}"
   sed -i '' "s|[0-9][0-9.]*[BMK]*+tokens|${TOKENS_ESC}+tokens|g" "$REPO_DIR/README.md"
@@ -110,8 +110,8 @@ fi
 
 cd "$REPO_DIR"
 
-# Gate on README only — the cache's timestamp changes every run, so including it
-# here would produce a junk commit daily even when the displayed values are flat.
+# Gate the COMMIT on the README actually changing — the cache's timestamp changes every
+# run, so committing it unconditionally would spam a daily no-op commit.
 if git diff --quiet README.md 2>/dev/null; then
   echo "$LOG_PREFIX No change in displayed stats — nothing to commit."
   exit 0
