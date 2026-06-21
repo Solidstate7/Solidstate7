@@ -1,13 +1,13 @@
 {
-  "tokens": "5.1B",
-  "raw_total_tokens": 5130308829,
+  "tokens": "5.2B",
+  "raw_total_tokens": 5214041494,
   "max_concurrent_sessions": 14,
-  "session_count": 1788,
-  "active_days": 59,
-  "active_hours": 172,
+  "session_count": 1801,
+  "active_days": 60,
+  "active_hours": 179,
   "longest_streak_hours": 35,
-  "rank": 668,
+  "rank": 667,
   "warnings": "",
   "source": "platform API (tokens/sessions/activeDays/activeTime) + local time-metrics (peak concurrent/longest streak)",
-  "updated": "2026-06-20T18:00:32Z"
+  "updated": "2026-06-21T18:00:27Z"
 }
