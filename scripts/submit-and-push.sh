@@ -23,11 +23,14 @@ WARN=""                                     # accumulates non-fatal degradations
 # (npx → node → native binary) if it outlives SECS. Returns CMD's exit code (143 on timeout).
 with_timeout() {
   local secs=$1; shift
-  set -m; "$@" & local pid=$!; set +m
+  set -m                                    # each background job below gets its own process group
+  "$@" & local pid=$!
   ( sleep "$secs"; kill -TERM -- "-$pid" 2>/dev/null; sleep 5; kill -KILL -- "-$pid" 2>/dev/null ) >/dev/null 2>&1 &
   local watch=$!
+  set +m
   local rc=0; wait "$pid" || rc=$?
-  kill "$watch" 2>/dev/null || true; wait "$watch" 2>/dev/null || true
+  kill -- "-$watch" 2>/dev/null || true     # the group, so the watcher's sleep goes too
+  wait "$watch" 2>/dev/null || true
   return "$rc"
 }
 
